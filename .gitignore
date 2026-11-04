@@ -1,0 +1,14 @@
+# Local secrets and application dependencies
+.env
+**/.env
+!.env.example
+node_modules/
+**/node_modules/
+__pycache__/
+*.pyc
+.DS_Store
+# Scratch output; retain the supplied examples
+*.log
+coverage/
+dist/
+.tmp/

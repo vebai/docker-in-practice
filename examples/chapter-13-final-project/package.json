@@ -1,0 +1,12 @@
+{
+  "name": "docker-in-practice-final-project",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local Node.js, PostgreSQL and Redis Docker learning lab",
+  "scripts": { "start": "node app.js" },
+  "dependencies": {
+    "express": "^5.1.0",
+    "pg": "^8.14.0",
+    "redis": "^5.0.0"
+  }
+}
