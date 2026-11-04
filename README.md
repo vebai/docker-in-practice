@@ -1,8 +1,23 @@
 # Docker in Practice
 
-**Companion GitHub repository** for *Docker in Practice: A Practical Guide to Images, Containers, Dockerfiles, Compose, Registries, and Debugging* by **Victor Ebai**.
+**Companion repository for *Docker in Practice: A Practical Guide to Images, Containers, Dockerfiles, Compose, Registries, and Debugging* by Victor Ebai.**
 
-The book is fully self-contained. This repository gives you convenient, practical files for the book's exercises, so you can build images, run containers, inspect evidence, deliberately reproduce faults, verify fixes and clean up safely.
+## What you will achieve with the book
+
+An application that works on your laptop can fail elsewhere because its dependencies, configuration or runtime environment differ. *Docker in Practice* gives you a practical way to package applications consistently, understand how containers behave and diagnose problems using evidence rather than guesswork.
+
+Through hands-on exercises, you will learn to:
+
+- **Build repeatable images** using Dockerfiles, build caching and multi-stage builds.
+- **Run and configure containers** with environment variables, safer secret-handling practices, persistent volumes and networks.
+- **Operate and troubleshoot applications** with health checks, CPU and memory limits, container state, exit codes and logs.
+- **Run connected services** with Docker Compose and prepare container images for CI/CD pipelines.
+
+The final project combines Node.js, PostgreSQL and Redis into a multi-container application you can build, start, inspect, troubleshoot and shut down safely. The aim is to give you the confidence to understand **what Docker is doing, why a container failed and how to verify a fix**.
+
+## How this repository supports the book
+
+The book is fully self-contained. This repository provides ready-to-use application files, Dockerfiles, Compose configurations and chapter-by-chapter lab guides so you can concentrate on practising the workflows rather than recreating every file by hand.
 
 **Working method:** Build → Observe → Break → Diagnose → Fix → Verify.
 
@@ -44,14 +59,12 @@ Each chapter README gives the starting directory, commands to run, expected evid
 
 **Follow the book:** Read the chapter, predict the outcome, use its commands, then compare your result with the expected evidence.
 
-**Use the supplied files:** Clone this repository and start in the matching chapter README. The files are intentionally small and editable; the original book explains the mental models and engineering decisions in greater depth.
+**Use the supplied files:** Clone this repository and start in the matching chapter README. The files are deliberately small and editable; the book explains the underlying concepts and engineering decisions.
 
 ```bash
 git clone https://github.com/vebai/docker-in-practice.git
 cd docker-in-practice
 ```
-
-This URL becomes available after the repository is published. If you are using the downloadable ZIP, extract it and open the `docker-in-practice` folder instead.
 
 ## Safe verification and cleanup
 
