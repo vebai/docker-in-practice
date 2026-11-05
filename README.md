@@ -66,6 +66,36 @@ git clone https://github.com/vebai/docker-in-practice.git
 cd docker-in-practice
 ```
 
+## Optional automated chapter validation
+
+The reader-facing book is self-contained. The optional `validation/` directory
+contains one shell script per chapter and a master runner with named
+checkpoints, captured logs and safe, chapter-scoped cleanup.
+
+From the repository root, on your Mac/Linux workstation with Docker running:
+
+```bash
+chmod +x validation/*.sh
+./validation/run-all.sh --list
+./validation/run-all.sh --status
+./validation/run-all.sh --chapter 05
+```
+
+To continue after a successful Chapter 5:
+
+```bash
+./validation/run-all.sh --from 06
+```
+
+**Failure handling:** inspect `validation/results/chapter-NN.log` and the
+named `bookval-chNN-*` resources *before* running
+`./validation/chNN.sh cleanup` and resuming with `--from NN`. The scripts
+avoid unrelated containers and do not publish registry images or create AWS
+resources. A chapter PASS covers only the automated checks; deliberate
+manual investigation and Chapter 12's optional remote publication exercise
+remain separate. See [Validation guide](validation/README.md) and
+[Recorded coverage](docs/VALIDATION-EVIDENCE-2026-11-04.md).
+
 ## Safe verification and cleanup
 
 Check names and ownership before deleting containers, images, networks or volumes. `docker compose down` keeps named volumes, while `docker compose down -v` **deletes** their stored data. Do not use broad prune commands on a shared machine.

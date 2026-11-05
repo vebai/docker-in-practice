@@ -41,5 +41,16 @@ docker rm -f book-python-demo
 
 The example uses Flask's development server for local learning, not production. Verify the actual Docker image and exit state with `docker ps -a` and `docker logs` if either example fails.
 
+## If HTTP verification fails or a host port is occupied
+
+Inspect the lab container first with `docker ps -a`, `docker logs` and
+`docker port`. On macOS, `lsof -nP -iTCP:8080 -sTCP:LISTEN` identifies a
+process already listening on port 8080. Choose a free *host* port such as
+18080 rather than stopping unrelated processes; leave the image's internal
+port unchanged. For HTTP startup races, wait for the application startup
+message and retry with `curl --noproxy '*'` before changing the Dockerfile.
+
+These steps were observed during the November 2026 Intel Mac live validation.
+
 ## Cleanup
 Use only the named lab containers above. Images may remain cached; remove them individually if no longer required. Running these three examples sequentially avoids port 8080 conflicts.

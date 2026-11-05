@@ -10,7 +10,8 @@ From the repository root:
 cd examples/chapter-04-multi-stage-builds/go-demo
 docker build -f single.Dockerfile -t book-go-single .
 docker build -f multi.Dockerfile -t book-go-multi .
-docker image ls book-go-single book-go-multi
+docker image ls book-go-single
+docker image ls book-go-multi
 docker history book-go-multi
 ```
 

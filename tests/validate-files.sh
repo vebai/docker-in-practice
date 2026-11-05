@@ -10,5 +10,7 @@ else
 fi
 if command -v bash >/dev/null 2>&1; then
   bash -n publish-to-github.sh
+  for script in validation/*.sh; do bash -n "$script"; done
+  echo "Validation scripts Bash syntax: OK"
 fi
 printf 'Repository static validation: PASS (no Docker resources launched)\n'
