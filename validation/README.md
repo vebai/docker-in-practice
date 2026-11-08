@@ -100,7 +100,5 @@ prove that the paperback manuscript has been reconciled.
 
 ## Limitations
 
-The suite passed **Bash syntax and harness-flow tests** before the first live run. On 4 November 2026 the author supplied MacBook logs showing automated **Chapters 05–13 passing** against a Docker Engine. Chapters 01–04 have not yet been proven by the new runner, although Chapters 03–04 passed comparable manual exercises. See `docs/VALIDATION-EVIDENCE-2026-11-04.md` for precise scope. The assistant has not independently executed Docker Engine in its own environment.
-
 No automatic script fully substitutes for the book's exercise in deliberate
 failure interpretation, security decisions, or production registry workflows.
