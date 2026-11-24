@@ -1,39 +1,63 @@
 # Docker in Practice
 
-**Paperback:** **[Amazon UK](https://www.amazon.co.uk/dp/B0HPGQQ86V)** · [Amazon US](https://www.amazon.com/dp/B0HPGQQ86V) · [Amazon India (ISBN search)](https://www.amazon.in/s?k=9798165620041&i=stripbooks)
+This is the companion repository for the book *Docker in Practice: A Practical Guide to Images, Containers, Dockerfiles, Compose, Registries, and Debugging* by **Victor Ebai**. It provides ready-to-use application files, Dockerfiles, Compose configurations, and chapter-based lab guides.
 
-![An evidence-first Docker troubleshooting workflow: check container state, inspect configuration and exit code, examine logs, and test the failing workflow.](docs/images/docker-evidence-first.svg)
+## Get the paperback
 
-*Inspect the evidence before changing a container.*
+**[Amazon UK — Paperback](https://www.amazon.co.uk/dp/B0HPGQQ86V)** (default) · [Amazon US — Paperback](https://www.amazon.com/dp/B0HPGQQ86V) · [Amazon India — Find paperback by ISBN](https://www.amazon.in/s?k=9798165620041&i=stripbooks)
 
-**Jump to:** [Getting started](#before-you-begin) · [Chapter index](#choose-a-chapter) · [Using the labs](#two-ways-to-work) · [Validation](#optional-automated-chapter-validation) · [Cleanup](#safe-verification-and-cleanup)
+**Quick navigation:** [Getting started](#getting-started) · [Chapter index](#choose-a-chapter) · [Lab workflow](#two-ways-to-work) · [Validation](#optional-automated-chapter-validation) · [Cleanup](#safe-verification-and-cleanup)
 
-**Companion repository for *Docker in Practice: A Practical Guide to Images, Containers, Dockerfiles, Compose, Registries, and Debugging* by Victor Ebai.**
+## From application code to running containers
 
-## What you will achieve with the book
+Docker packages application code and runtime dependencies into an image. You use a Dockerfile to define the build, run containers from the resulting image, and use a registry to distribute images. The same application image can support development, testing, staging, and production when the runtime environment is configured appropriately.
 
-An application that works on your laptop can fail elsewhere because its dependencies, configuration or runtime environment differ. *Docker in Practice* gives you a practical way to package applications consistently, understand how containers behave and diagnose problems using evidence rather than guesswork.
+![Docker in Practice learning overview showing application code, a Dockerfile, a reusable Docker image, a running container, an image registry, and development-to-production environments.](docs/images/docker-overview.png)
 
-Through hands-on exercises, you will learn to:
+*From application code to image, container and registry. Registries store images rather than running containers; consistent results also depend on configuration, platform compatibility, and permissions.*
 
-- **Build repeatable images** using Dockerfiles, build caching and multi-stage builds.
-- **Run and configure containers** with environment variables, safer secret-handling practices, persistent volumes and networks.
-- **Operate and troubleshoot applications** with health checks, CPU and memory limits, container state, exit codes and logs.
-- **Run connected services** with Docker Compose and prepare container images for CI/CD pipelines.
+**The book is fully self-contained.** You do not need this repository to understand or complete its learning path. This companion provides convenient, testable copies of the example files and guided exercises.
 
-The final project combines Node.js, PostgreSQL and Redis into a multi-container application you can build, start, inspect, troubleshoot and shut down safely. The aim is to give you the confidence to understand **what Docker is doing, why a container failed and how to verify a fix**.
+Build and optimise Docker images, run and inspect containers, use volumes and networks, add health and resource controls, **run multi-service Compose applications**, investigate failures using container evidence, and prepare images for CI/CD.
 
-## How this repository supports the book
+The practical workflow is **Build → Observe → Break → Diagnose → Fix → Verify**. Use the book for the explanations and engineering judgement; use this repository to find the relevant files, run the labs, and verify outcomes.
 
-The book is fully self-contained. This repository provides ready-to-use application files, Dockerfiles, Compose configurations and chapter-by-chapter lab guides so you can concentrate on practising the workflows rather than recreating every file by hand.
+## What you will build and practise
 
-**Working method:** Build → Observe → Break → Diagnose → Fix → Verify.
+By working through the exercises, you will learn to:
+
+- **Build repeatable images** using Dockerfiles, caching, multi-stage builds, and appropriate image tags.
+- **Run and configure containers** with environment variables, safer secret handling, volumes, and Docker networks.
+- **Check application behaviour** using health checks, resource limits, container state, exit codes, and logs.
+- **Operate multi-container applications** with Docker Compose and prepare images for CI/CD publication.
+- **Diagnose and repair failures** using reproducible, chapter-scoped exercises.
+
+The final project brings together Node.js, PostgreSQL, and Redis in a small Compose stack that you can build, inspect, troubleshoot, and clean up safely.
 
 ## Before you begin
 
-Read the [setup guide](docs/SETUP.md) to install Docker Engine or Docker Desktop, verify Compose and configure your terminal. A Docker Hub or GitHub account is optional until the image-publishing chapter.
+**First-time setup:** [Install Docker, Docker Compose, and supporting tools](docs/SETUP.md).
 
-Verify Docker before using the exercises:
+You need:
+
+- **Docker Desktop** (macOS/Windows) or **Docker Engine** (Linux), running and accessible from your terminal.
+- The modern **`docker compose`** command, **Git**, and **`curl`** (or a browser for HTTP verification).
+- **Node.js and npm on your host** for the lock-file exercises in Chapters 3, 4, and 13.
+- A macOS or Linux terminal, or a Bash-compatible WSL 2 terminal on Windows.
+- An optional registry account for the image-publishing work in Chapter 12.
+
+**Safety:** Use a disposable local environment. Do not commit real credentials, expose practice passwords, or publish unnecessary ports. Inspect container and volume ownership before cleanup; deleting named volumes can permanently remove lab data. No AWS account is required.
+
+## Getting started
+
+**1. Clone the repository** in your own terminal:
+
+```bash
+git clone https://github.com/vebai/docker-in-practice.git
+cd docker-in-practice
+```
+
+**2. Verify your tools** and that the Docker engine is running:
 
 ```bash
 docker --version
@@ -41,7 +65,15 @@ docker compose version
 docker run --rm hello-world
 ```
 
-The examples are intended for a **local, disposable learning environment**. Do not expose practice credentials or open lab ports to public networks.
+**3. Choose a chapter.** Beginners can start with the [first container exercise](chapters/chapter-01-first-container/README.md). Each chapter guide identifies the files, commands, expected evidence, and safe cleanup. Chapters generally use independent examples.
+
+**4. Check the local example files** without starting containers:
+
+```bash
+bash tests/validate-files.sh
+```
+
+For runtime exercises and chapter-specific automation, follow the [validation guide](validation/README.md). A passing offline check does not prove that a running application works.
 
 ## Choose a chapter
 
@@ -67,12 +99,7 @@ Each chapter README gives the starting directory, commands to run, expected evid
 
 **Follow the book:** Read the chapter, predict the outcome, use its commands, then compare your result with the expected evidence.
 
-**Use the supplied files:** Clone this repository and start in the matching chapter README. The files are deliberately small and editable; the book explains the underlying concepts and engineering decisions.
-
-```bash
-git clone https://github.com/vebai/docker-in-practice.git
-cd docker-in-practice
-```
+**Use the supplied files:** Start in the matching chapter README after cloning the repository. The examples are deliberately small and editable; the book explains the underlying concepts and engineering decisions.
 
 ## Optional automated chapter validation
 
