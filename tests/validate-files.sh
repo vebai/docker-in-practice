@@ -9,7 +9,7 @@ else
   echo 'Node.js unavailable: skipped JavaScript syntax checking'
 fi
 if command -v bash >/dev/null 2>&1; then
-  bash -n publish-to-github.sh
+  bash -n tests/validate-files.sh
   for script in validation/*.sh; do bash -n "$script"; done
   echo "Validation scripts Bash syntax: OK"
 fi

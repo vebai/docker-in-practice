@@ -1,5 +1,13 @@
 # Docker in Practice
 
+**Paperback:** **[Amazon UK](https://www.amazon.co.uk/dp/B0HPGQQ86V)** · [Amazon US](https://www.amazon.com/dp/B0HPGQQ86V) · [Amazon India (ISBN search)](https://www.amazon.in/s?k=9798165620041&i=stripbooks)
+
+![An evidence-first Docker troubleshooting workflow: check container state, inspect configuration and exit code, examine logs, and test the failing workflow.](docs/images/docker-evidence-first.svg)
+
+*Inspect the evidence before changing a container.*
+
+**Jump to:** [Getting started](#before-you-begin) · [Chapter index](#choose-a-chapter) · [Using the labs](#two-ways-to-work) · [Validation](#optional-automated-chapter-validation) · [Cleanup](#safe-verification-and-cleanup)
+
 **Companion repository for *Docker in Practice: A Practical Guide to Images, Containers, Dockerfiles, Compose, Registries, and Debugging* by Victor Ebai.**
 
 ## What you will achieve with the book
@@ -93,8 +101,7 @@ named `bookval-chNN-*` resources *before* running
 avoid unrelated containers and do not publish registry images or create AWS
 resources. A chapter PASS covers only the automated checks; deliberate
 manual investigation and Chapter 12's optional remote publication exercise
-remain separate. See [Validation guide](validation/README.md) and
-[Recorded coverage](docs/VALIDATION-EVIDENCE-2026-11-04.md).
+remain separate. See [Validation guide](validation/README.md).
 
 ## Safe verification and cleanup
 
@@ -103,3 +110,11 @@ Check names and ownership before deleting containers, images, networks or volume
 See [Troubleshooting](docs/TROUBLESHOOTING.md) and [Cleaning up](docs/CLEANUP.md). The [local file validator](tests/validate-files.sh) checks example file syntax and documentation links without running Docker.
 
 **Security:** No real credentials belong in this repository. `.env.example` contains illustrative values only. The optional registry-publishing workflow is provided as a template under `examples/` and is **not activated** automatically.
+
+## Continue with Kubernetes
+
+When you are ready to move from local containers to orchestration, *[Kubernetes in Practice](https://www.amazon.co.uk/dp/B0HPGS53FY)* builds on Docker fundamentals with Minikube, Helm, workload security and Amazon EKS. Its [companion labs](https://github.com/vebai/kubernetes-in-practice) are available separately.
+
+## Licence
+
+The runnable code and configuration examples are available under the [MIT License](LICENSE). Book text and illustrations remain © 2026 Victor Ebai.

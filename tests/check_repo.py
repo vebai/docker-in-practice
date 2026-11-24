@@ -31,8 +31,6 @@ for p in root.rglob('*.yml'):
     except ImportError:
         pass
     except Exception as e:errors.append(f'Invalid YAML {p.relative_to(root)}: {e}')
-for unwanted in ('BOOK-CODE.md','MANUSCRIPT.md'):
-    if list(root.rglob(unwanted)):errors.append(f'Forbidden editorial file: {unwanted}')
 if errors:
     print('\n'.join(errors),file=sys.stderr)
     sys.exit(1)

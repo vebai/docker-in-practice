@@ -6,11 +6,10 @@ Do not run it inside a container or AWS CloudShell.
 
 ## Install
 
-Unzip the `validation/` folder into the root of your existing local
-`docker-in-practice` clone, beside `examples/`, `chapters/`, and `tests/`.
+The validation scripts are already part of this repository. From your local clone, run:
 
 ```bash
-cd ~/Downloads/book-validation-20261104/docker-in-practice
+cd docker-in-practice
 chmod +x validation/*.sh
 ./validation/run-all.sh --list
 ./validation/run-all.sh --status
@@ -18,7 +17,7 @@ chmod +x validation/*.sh
 
 ## Use it
 
-You have already validated Chapters 3–4 manually. To begin with **Chapter 5**:
+To run the Chapter 5 validation checks:
 
 ```bash
 ./validation/run-all.sh --chapter 05
@@ -67,10 +66,9 @@ running for diagnosis. Successful chapters clean up only their owned lab
 containers, volumes and networks; Docker images are retained for rebuild speed.
 
 A `PASS` from Chapter 12 means its **local image and HTTP checks** passed, not
-that GitHub Actions or a remote registry push was run. The optional registry
-publishing exercise and any book-to-repository text comparison still need
-separate manual verification. Chapters 1–13 passing does **not** independently
-prove that the paperback manuscript has been reconciled.
+that GitHub Actions or a remote registry push was run. Test registry publication
+separately if you choose to use that optional exercise. Automated checks cannot
+replace careful review of the book's explanations and expected results.
 
 ## Safe isolation
 
@@ -95,8 +93,8 @@ prove that the paperback manuscript has been reconciled.
 - Chapters 6, 10 and 13 start databases with example passwords. Use only a
   disposable local environment, not a shared or production server.
 - Chapter 13 requires more Docker memory than basic single-container tests.
-  Your previously reported ~1.94 GiB Docker VM may need its allocation raised
-  before this chapter. Check the five pre-existing running containers first.
+  Check Docker's available memory and any other running containers before
+  beginning this chapter; increase the allocation if the stack cannot start.
 
 ## Limitations
 
