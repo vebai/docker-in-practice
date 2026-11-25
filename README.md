@@ -4,7 +4,7 @@ This is the companion repository for the book *Docker in Practice: A Practical G
 
 ## Get the paperback
 
-**[Amazon UK — Paperback](https://www.amazon.co.uk/dp/B0HPGQQ86V)** (default) · [Amazon US — Paperback](https://www.amazon.com/dp/B0HPGQQ86V) · [Amazon India — Find paperback by ISBN](https://www.amazon.in/s?k=9798165620041&i=stripbooks)
+**[Amazon UK — Paperback](https://www.amazon.co.uk/dp/B0HPGQQ86V)** · [Amazon US — Paperback](https://www.amazon.com/dp/B0HPGQQ86V) · [Amazon India — Find paperback by ISBN](https://www.amazon.in/s?k=9798165620041&i=stripbooks)
 
 **Quick navigation:** [Getting started](#getting-started) · [Chapter index](#choose-a-chapter) · [Lab workflow](#two-ways-to-work) · [Validation](#optional-automated-chapter-validation) · [Cleanup](#safe-verification-and-cleanup)
 
