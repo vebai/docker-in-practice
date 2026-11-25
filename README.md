@@ -2,9 +2,13 @@
 
 This is the companion repository for the book *Docker in Practice: A Practical Guide to Images, Containers, Dockerfiles, Compose, Registries, and Debugging* by **Victor Ebai**. It provides ready-to-use application files, Dockerfiles, Compose configurations, and chapter-based lab guides.
 
-## Get the paperback
+## Get the book on Amazon
 
-**[Amazon UK — Paperback](https://www.amazon.co.uk/dp/B0HPGQQ86V)** · [Amazon US — Paperback](https://www.amazon.com/dp/B0HPGQQ86V) · [Amazon India — Find paperback by ISBN](https://www.amazon.in/s?k=9798165620041&i=stripbooks)
+<a id="get-the-paperback"></a>
+
+**Paperback:** [Amazon UK](https://www.amazon.co.uk/dp/B0HPGQQ86V) · [Amazon US](https://www.amazon.com/dp/B0HPGQQ86V) · [Amazon India](https://www.amazon.in/dp/B0HPGQQ86V)
+
+**Kindle eBook:** [Amazon UK](https://www.amazon.co.uk/dp/B0HPCT9D16) · [Amazon US](https://www.amazon.com/dp/B0HPCT9D16) · [Amazon India](https://www.amazon.in/dp/B0HPCT9D16)
 
 **Quick navigation:** [Getting started](#getting-started) · [Chapter index](#choose-a-chapter) · [Lab workflow](#two-ways-to-work) · [Validation](#optional-automated-chapter-validation) · [Cleanup](#safe-verification-and-cleanup)
 
